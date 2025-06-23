@@ -14,8 +14,6 @@ func on_hurt(hit_damage: int) -> void:
 	material.set_shader_parameter("shake_intensity", 0.5)
 	await get_tree().create_timer(1.0).timeout
 	material.set_shader_parameter("shake_intensity", 0.0)
-	var hp_left = damage_component.max_damage - damage_component.current_damage
-	print("Current HP left: %d" % hp_left)
 
 func on_max_damage_reached() -> void:
 	call_deferred("add_log_scene")
