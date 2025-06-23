@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=4 uid="uid://mwpu2ajeafjn"]
 
-[ext_resource type="TileSet" uid="uid://c37oyt3kb5qfd" path="res://tileSets/game_tile_set.tres" id="1_ywbes"]
+[ext_resource type="TileSet" uid="uid://c37oyt3kb5qfd" path="res://tilesets/game_tile_set.tres" id="1_ywbes"]
 
 [node name="TestSceneTileMap" type="Node2D"]
 
