@@ -24,6 +24,7 @@ radius = 7.0
 
 [node name="Rock" type="Sprite2D"]
 material = SubResource("ShaderMaterial_rvrkl")
+position = Vector2(0, -5)
 texture = SubResource("AtlasTexture_3gpoi")
 script = ExtResource("2_o0aol")
 

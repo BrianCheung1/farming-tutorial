@@ -24,6 +24,7 @@ size = Vector2(18, 25)
 
 [node name="LargeTree" type="Sprite2D"]
 material = SubResource("ShaderMaterial_ui7p5")
+position = Vector2(0, -14)
 texture = SubResource("AtlasTexture_oed2x")
 script = ExtResource("2_w00ks")
 
