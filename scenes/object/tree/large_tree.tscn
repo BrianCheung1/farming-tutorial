@@ -24,21 +24,22 @@ size = Vector2(18, 25)
 
 [node name="LargeTree" type="Sprite2D"]
 material = SubResource("ShaderMaterial_ui7p5")
-position = Vector2(0, -14)
+position = Vector2(0, -4)
 texture = SubResource("AtlasTexture_oed2x")
+offset = Vector2(0, -6)
 script = ExtResource("2_w00ks")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 11)
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_wbdy2")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_16a8w")]
 tool = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
-position = Vector2(0, 2.5)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_ui7p5")
 debug_color = Color(0.894118, 0.0941176, 0.745098, 0.419608)
 

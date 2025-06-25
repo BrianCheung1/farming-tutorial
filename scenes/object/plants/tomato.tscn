@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcwjaq3x0d174"]
+
+[ext_resource type="Script" uid="uid://bddxas43y0hf7" path="res://scenes/object/plants/tomato.gd" id="1_oluvs"]
+[ext_resource type="Texture2D" uid="uid://c5cjcg1aqr1wl" path="res://assets/game/objects/basic_plants.png" id="2_06su4"]
+[ext_resource type="PackedScene" uid="uid://cgweiws3550ih" path="res://scenes/object/plants/flowering_particles.tscn" id="3_0py4k"]
+[ext_resource type="PackedScene" uid="uid://c2wxprni05ikg" path="res://scenes/object/plants/growth_cycle_component.tscn" id="4_1ivg1"]
+[ext_resource type="PackedScene" uid="uid://b7t076l7prj4q" path="res://scenes/components/hurt_component.tscn" id="5_02oe0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6jw6m"]
+particle_flag_disable_z = true
+angle_min = -180.0
+angle_max = 180.0
+angular_velocity_min = -300.0
+angular_velocity_max = 300.0
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
+gravity = Vector3(0, -10, 0)
+color = Color(0.580392, 0.87451, 0.996078, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oluvs"]
+size = Vector2(10.8033, 8)
+
+[node name="Tomato" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_oluvs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("2_06su4")
+hframes = 6
+vframes = 2
+frame = 7
+
+[node name="WateringParticles" type="GPUParticles2D" parent="."]
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_6jw6m")
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_0py4k")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("4_1ivg1")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("5_02oe0")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-0.611, -2.609)
+shape = SubResource("RectangleShape2D_oluvs")

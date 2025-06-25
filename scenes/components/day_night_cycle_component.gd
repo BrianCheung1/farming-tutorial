@@ -19,7 +19,7 @@ extends CanvasModulate
 		DayAndNightCycleManager.initial_minute = im
 		DayAndNightCycleManager.set_initial_time()
 		
-@export var day_night_gradient_texture = GradientTexture1D
+@export var day_night_gradient_texture: GradientTexture1D
 
 func _ready() -> void:
 	DayAndNightCycleManager.initial_day = initial_day
